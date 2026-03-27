@@ -8,6 +8,8 @@ public class AuthUserAndPassword : Authentications
 {
     [SerializeField] private TMP_InputField userName;
     [SerializeField] private TMP_InputField passWord;
+    [SerializeField] private GameObject textLogin;
+    [SerializeField] private GameObject textRecord;
     private void Reset()
     {
         gameObject.name = "AuthUserAndPassword";
@@ -24,28 +26,30 @@ public class AuthUserAndPassword : Authentications
             Debug.LogWarning($"No se Inicializaron los servicios: {e}");
         }
     }
-    public void Register()
+    public async void Register()
     {
         try
         {
-            AuthenticationService.Instance.AddUsernamePasswordAsync(userName.text,passWord.text);
+            await AuthenticationService.Instance.SignUpWithUsernamePasswordAsync(userName.text,passWord.text);
             SignedIn();
         }
         catch(Exception e)
         {
             Debug.LogWarning(e);
+            textRecord.SetActive(true);
         }
     }
-    private void Insert()
+    public async void Insert()
     {
         try
         {
-            AuthenticationService.Instance.SignUpWithUsernamePasswordAsync(userName.text,passWord.text);
+            await AuthenticationService.Instance.SignInWithUsernamePasswordAsync(userName.text,passWord.text);
             SignedIn();
         }
         catch(Exception e)
         {
             Debug.LogWarning(e);
+            textLogin.SetActive(true);
         }
     }
 }
