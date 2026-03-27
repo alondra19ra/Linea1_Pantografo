@@ -919,11 +919,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 498c37f6-c5b3-4bf2-a7c8-0944a6efaa6f
+  cloudProjectId: 339ffcc3-c035-4fe1-bf67-3aeafe586155
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Aplicacion Linea 1_Pantografo
-  organizationId: unity_4964d2daaee7dbae6e1f
+  projectName: Mobiles Avanzados
+  organizationId: unity_6a7bef3313e88881d343
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
